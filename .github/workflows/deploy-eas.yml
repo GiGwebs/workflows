@@ -18,6 +18,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -38,8 +40,3 @@ jobs:
 
       - name: Build with EAS
         run: eas build --platform ${{ inputs.platform }} --profile ${{ inputs.profile }} --non-interactive
-
-      - name: Deploy web to EAS Hosting
-        run: |
-          npx expo export --platform web
-          eas deploy --non-interactive
