@@ -6,7 +6,7 @@ on:
       platform:
         description: 'Platform to build (ios, android, or all)'
         type: string
-        default: 'all'
+        default: 'android'
       profile:
         description: 'EAS build profile (development, preview, production)'
         type: string
